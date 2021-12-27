@@ -2,6 +2,7 @@
 title: Connectiontest.devをリリースしました
 description: 今日、新しいWebサービス、Connectiontest.devをリリースしました。簡単なものなので、Webサービスといっていいのかもわかりませんが...
 slug: connectiontest-released
+date: 2019-03-29
 tags:
   - "Web service"
   - "PHP"
