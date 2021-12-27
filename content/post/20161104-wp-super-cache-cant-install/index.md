@@ -3,7 +3,7 @@ title: 【対処法】wp super cacheのインストールができない
 description: wp super cacheのインストールにつまずいたので備忘録。
 date: 2016-11-04
 slug: "wp-super-cache-cant-install"
-categories:
+tags:
   - "Web Service"
 ---
 
