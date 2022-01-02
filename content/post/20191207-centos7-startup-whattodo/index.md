@@ -16,7 +16,7 @@ tags:
 ## やったこと
 
 1. sshの設定
-  - <script src="https://gist.github.com/pinfort/2464fd2d7d5729ba2b95073c2e75c77e.js"></script>
+  - {{< gist pinfort 2464fd2d7d5729ba2b95073c2e75c77e >}}
   - ユーザー追加
   - 公開鍵認証設定
   - password authenticationの拒否

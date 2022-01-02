@@ -11,7 +11,7 @@ series:
 ---
 ## やりたいこと
 CentOS 7.6環境で、PX-W3PE4を動かしたい。
-[前回の記事](/posts/centos76-px-w3pe4-1)
+[前回の記事](centos76-px-w3pe4-1)
 
 ## 環境
 

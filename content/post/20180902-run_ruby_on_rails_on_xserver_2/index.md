@@ -66,4 +66,4 @@ ldflagsが必要な奴は個別でやる。
 ## ./bin/rails s
 うごいた！
 
-つぎ！[https://blog.pinfort.me/posts/run_ruby_on_rails_on_xserver_3](https://blog.pinfort.me/posts/run_ruby_on_rails_on_xserver_3)
+つぎ！[run_ruby_on_rails_on_xserver_3](run_ruby_on_rails_on_xserver_3)

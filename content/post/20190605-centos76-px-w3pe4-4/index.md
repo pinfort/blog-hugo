@@ -11,7 +11,7 @@ series:
 ---
 ## やりたいこと
 CentOS 7.6環境で、PX-W3PE4を動かしたい。
-[前回の記事](/posts/centos76-px-w3pe4-3)
+[前回の記事](centos76-px-w3pe4-3)
 
 ## 環境
 
@@ -58,4 +58,4 @@ Japanese Chijou Digital B-CAS Card (pay TV)
 
 今回のカードリーダーはすでにplistに登録されているようなので追加の作業は不要なようですね。B-CASカードが認識されましたね。カードリーダーの設定はこれでよさそうです。
 
-[次回の記事](/posts/centos76-px-w3pe4-5)
+[次回の記事](centos76-px-w3pe4-5)
