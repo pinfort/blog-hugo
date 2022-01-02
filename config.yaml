@@ -1,4 +1,4 @@
-baseurl: https://example.com
+baseurl: https://blog.pinfort.me
 languageCode: ja-jp
 theme: hugo-theme-stack
 paginate: 5
