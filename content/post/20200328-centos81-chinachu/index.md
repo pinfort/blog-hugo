@@ -7,7 +7,7 @@ tags:
   - CentOS
   - Linux
   - PC-tv
-series:
+categories:
   - "CentOS8.1-DD-Max-M4"
 ---
 ## 環境

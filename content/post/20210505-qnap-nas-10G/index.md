@@ -24,23 +24,23 @@ tags:
 ### HDDの用意、設置
 用意といっても、シールを貼るだけです。RAIDを組むので、ばらしたときに場所を入れ替えてしまっては大変です。そのため、HDD本体と、外ケースのそれぞれに、わかるようにシールを貼ります。いいシールがないか探したところ、ちょうどGREEさんのシールがあったので利用させてもらいました。最初、GREEの四文字で四つのHDDに貼り分けようとしていたのは内緒です。もちろん、三文字目と四文字目が同じEなので、それでは見分けがつきません。Eの代わりに、GREEの六角形マークを一文字として利用することで解決しました。
 
-[![qnapnas_hdd](assets/thumbnail/qnapnas.jpg)](assets/qnapnas_hdd.jpg)
+{{< figure src="assets/thumbnail/qnapnas_hdd.jpg" link="assets/qnapnas_hdd.jpg" title="qnapnas_hdd" height="340">}}
 
 ### 電源、ネットワークの接続
 変わったことはなく、同梱されている電源を接続すること。また、10G用のケーブルは同梱されていないので（RJ45のLANケーブルは同梱されていました）、どのご家庭にも落ちている任意のSFP+ケーブルを用意し、これまたどのご家庭にも余っている10GスイッチのSFP+コネクタに接続するだけです。特に問題なくリンクアップもしました。
 
-[![10GDAC](assets/thumbnail/10Gdac.jpg)](assets/10Gdac.jpg)
+{{< figure src="assets/thumbnail/10Gdac.jpg" link="assets/10Gdac.jpg" title="10GDAC" height="340">}}
 
 ### 初期設定
 QNAPのNASようにソフトウエアもあるようですが、単純にip直打ちでも接続できるようです。ユーザー名はadmin、初期パスワードはプライマリネットワークカードのMACアドレスのようですね。ログインができたら、ストレージプールの作成など、必要な手順を画面に従って行います。丁寧なチュートリアルがあるので、そう迷うことはなさそうです。今回は4本の12TBのHDDでraid6を構築しました。
 
-[![storages](assets/thumbnail/storages.png)](assets/storages.png)
+{{< figure src="assets/thumbnail/storages.png" link="assets/storages.png" title="storages" height="340">}}
 
 ### ネットワーク速度の確認
 さて、せっかく10GのNASを構築したので、速度を確認していたいところです。実際10Gネットワークで接続されたPCからベンチマークを行ったところ、読み込みでは約5Gbpsを記録するなど、素晴らしい成果を残してくれました。
 
-[![network-bench](assets/thumbnail/network-bench.png)](assets/network-bench.png)
-[![network-speed](assets/thumbnail/network-speed.png)](assets/network-speed.png)
+{{< figure src="assets/thumbnail/network-bench.png" link="assets/network-bench.png" title="network-bench" height="340">}}
+{{< figure src="assets/thumbnail/network-speed.png" link="assets/network-speed.png" title="network-speed" height="340">}}
 
 ### 終わりに
 今回すばらしいストレージ環境を構築することができました。これをベースに、さらに環境を充実させていきたいと考えています。

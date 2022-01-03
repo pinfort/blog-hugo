@@ -6,7 +6,7 @@ slug: centos76-px-w3pe4-3
 tags:
   - Linux
   - PC-tv
-series:
+categories:
   - "CentOS7.6-PX-W3PE4"
 ---
 ## やりたいこと

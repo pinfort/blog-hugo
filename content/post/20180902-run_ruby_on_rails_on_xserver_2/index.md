@@ -7,7 +7,7 @@ tags:
   - "Ruby"
   - "Web service"
   - "XSERVER"
-series:
+categories:
   - "run ruby on rails on xserver"
 ---
 > この記事は試行錯誤の記録です！railsを動かすには、[その4（結論編）](https://blog.pinfort.me/posts/run_ruby_on_rails_on_xserver_4)だけを見てもらえれば解決します！

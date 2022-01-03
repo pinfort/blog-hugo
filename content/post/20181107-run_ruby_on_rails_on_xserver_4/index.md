@@ -7,7 +7,7 @@ tags:
   - "Ruby"
   - "Web service"
   - "XSERVER"
-series:
+categories:
   - "run ruby on rails on xserver"
 ---
 これは以前書いた　XSERVERでRuby on Railsを動かす　の結論をまとめて、わかりやすくしたものです。

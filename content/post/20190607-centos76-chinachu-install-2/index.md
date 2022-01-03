@@ -6,7 +6,7 @@ slug: centos76-chinachu-install-2
 tags:
   - Linux
   - PC-tv
-series:
+categories:
   - "CentOS7.6-Chinachu"
 ---
 ### やりたいこと
