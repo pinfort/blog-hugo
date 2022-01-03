@@ -10,7 +10,7 @@ tags:
 categories:
   - "raspberry-pi-4-k8s"
 ---
-[![raspberry pi 4](assets/thumbnail/respberrypi4-0-0-0-0-1620447724.jpg)](assets/respberrypi4.jpg)
+{{< figure src="assets/thumbnail/respberrypi4.jpg" link="assets/respberrypi4.jpg" title="raspberry pi 4" height="340">}}
 
 ## おうちk8s
 今や、おうちにk8sクラスタがあるのは当たり前の時代。私もついにraspberry Pi 4でこれを構築することにしました。ラズパイでのk8sクラスタ構築例はインターネットにいくらでもあるので大変参考になりました。この記事では、特に物理的な構築部分について記述します。ソフトウェアの構築部分は別の記事で記述します。
