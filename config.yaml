@@ -192,6 +192,12 @@ menu:
           params:
             icon: brand-twitter
 
+        - identifier: rss
+          name: Rss
+          url: //index.xml
+          params:
+            icon: rss
+
 related:
     includeNewer: true
     threshold: 60
