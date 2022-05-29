@@ -2,7 +2,7 @@
 title: Raspberry Pi 4でおうちk8s構築（argoCD編）
 description: raspberry Pi 4でおうちk8sを構築した記録その４です。
 date: 2021-05-11
-slug: raspberry-pi-4-k8s-3
+slug: raspberry-pi-4-k8s-4
 tags:
   - Linux
   - k8s
