@@ -199,7 +199,7 @@ sudo usermod -aG docker epgstation
 [https://github.com/l3tnun/docker-mirakurun-epgstation](https://github.com/l3tnun/docker-mirakurun-epgstation)
 dockerで構築する。
 
-ホストのpcscdは停止しなければならないようなので停止
+ホストのpcscdは停止しなければならないようなので停止。docker-composeをsudoで実行しないといけないことに気づいたのでグループに追加
 ```
 sudo passwd epgstation
 sudo usermod -aG sudo epgstation
@@ -249,7 +249,7 @@ docker-compose build
 
 ビルドには時間がかかるのでただ待ちます。できたら起動します。
 ```
-docker-compose up -d
+sudo docker-compose up -d
 ```
 
 地上波のチャンネルスキャンを行うので、channels.ymlの地上波部分を削除してAPIをたたきます。
@@ -265,8 +265,8 @@ npm run restore HOGEHOGE
 epgstationのconfig.ymlはいい感じに編集します。
 もろもろ終えれば再起動します。
 ```
-docker-compose down
-docker-compose up -d
+sudo docker-compose down
+sudo docker-compose up -d
 ```
 
 これでだいたいの移行作業は終了だと思います。
