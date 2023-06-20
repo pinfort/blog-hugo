@@ -214,4 +214,39 @@ kubectl delete secret argocd-initial-admin-secret -n argocd
 ```
 
 yamahaルーターがDNS問い合わせでTCPをしゃべってくれない問題でしばらくはまったが、8.8.8.8を追加して問題解決。
+さらに、今回の環境はipv4しかつながらないにもかかわらず、8.8.8.8からAAAAレコードをとってきてしまうのでcorednsの設定を変更してAAAAレコードをとってこないようにする。
+
+```diff:/var/lib/rancher/k3s/server/manifests/coredns.yaml
+ apiVersion: v1
+ kind: ConfigMap
+ metadata:
+   name: coredns
+   namespace: kube-system
+ data:
+   Corefile: |
+     .:53 {
+         errors
+         health
+         ready
+         kubernetes cluster.local in-addr.arpa ip6.arpa {
+           pods insecure
+           fallthrough in-addr.arpa ip6.arpa
+         }
+         hosts /etc/coredns/NodeHosts {
+           ttl 60
+           reload 15s
+           fallthrough
+         }
+         prometheus :9153
++        rewrite stop type AAAA A
++        forward . /etc/resolv.conf 8.8.8.8
+-        forward . /etc/resolv.conf
+         cache 30
+         loop
+         reload
+         loadbalance
+     }
+     import /etc/coredns/custom/*.server
+```
+
 今回は以上。
