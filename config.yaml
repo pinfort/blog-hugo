@@ -198,6 +198,11 @@ menu:
           params:
             icon: rss
 
+        - identifier: mastodon
+          name: Mastodon
+          url: https://mstdn.hyogo.jp/@pinfort
+          params:
+            icon: brand-mastodon
 related:
     includeNewer: true
     threshold: 60
