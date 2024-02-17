@@ -41,6 +41,7 @@ HTTPの接続テスト用に使えるかもしれないwebサービスです。 
 - [GitHub: pinfort](https://github.com/pinfort)
 - [Pring: pinfort](https://file.pring.app/link_me/hZ7qOwKQGl)
 - [Discord: pinfort](https://discordapp.com/users/pinfort)
+- [LinkedIn: pinfort](https://www.linkedin.com/in/pinfort/)
 
 ## 当サイトの沿革
 |時期|内容|
