@@ -42,27 +42,30 @@ ASUS ExpertBook B9450 に載っている ELAN7006 指紋センサーを Linux �
 
 ## トポロジ
 
-```
-  Cannon Lake-LP SoC                          ELAN7006
-  ┌────────────────────┐                   ┌─────────────────┐
-  │ LPSS SPI0          │  CS0B  ─────────▶ │ 80 × 80 px      │
-  │ (pxa2xx-spi)       │  CLK   ─────────▶ │ ICVersion 0x2   │
-  │ pinctrl INT34BB    │  MOSI  ─────────▶ │ スタンドアロン   │
-  │ \_SB.PCI0.SPI0     │  MISO  ◀╌╌╌╌╌╌╌╌╌ │ (タッチパッド    │
-  │      .FPRT         │        (Hi-Z)     │  配下ではない)   │
-  │ /dev/spidev0.0     │  RESET ─────────▶ │                 │
-  │                    │  IRQ   ◀───────── │ MISO を一度も    │
-  │                    │                   │ 駆動しない       │
-  └────────────────────┘                   └────────┬────────┘
-     6 本すべて Linux から正常と確認済み              ╎ VDD ?
-                                                     ╎
-                          ┌──────────────────────────┴───┐
-                          │ EC / PMIC                     │
-                          │ ソフトウェアハンドルなし       │
-                          └──────────────────────────────┘
+```mermaid
+flowchart LR
+    subgraph SOC["Cannon Lake-LP SoC"]
+        SPI["LPSS SPI0 / pxa2xx-spi<br/>pinctrl INT34BB<br/>_SB.PCI0.SPI0.FPRT<br/>/dev/spidev0.0"]
+    end
+
+    subgraph FPS["ELAN7006"]
+        FP["80 × 80 px<br/>ICVersion 0x2<br/>スタンドアロン（タッチパッド配下ではない）<br/>MISO を一度も駆動しない"]
+    end
+
+    EC["EC / PMIC<br/>ソフトウェアハンドルなし"]
+
+    SPI -- "CS0B" --> FP
+    SPI -- "CLK" --> FP
+    SPI -- "MOSI" --> FP
+    FP -. "MISO（Hi-Z）" .-> SPI
+    SPI -- "RESET" --> FP
+    FP -- "IRQ" --> SPI
+    FP -. "VDD ?" .-> EC
+
+    linkStyle 6 stroke:#e5534b,stroke-width:2px
 ```
 
-SoC が制御するラインはすべて正しく、すべての転送は完了します。スレーブが MISO を駆動しないだけです。ソフトウェアから到達できない経路は破線の1本だけです。
+SoC が制御するラインはすべて正しく（CS0B / CLK / MOSI / MISO / RESET / IRQ の 6 本すべて Linux から確認済み）、すべての転送は完了します。スレーブが MISO を駆動しないだけです。ソフトウェアから到達できない経路は破線の1本だけです。
 
 ## ハードウェアの事実
 
@@ -82,12 +85,18 @@ SoC が制御するラインはすべて正しく、すべての転送は完了�
 
 `ResetType = 2 = RESET_TYPE_GPIO` での「ハードウェアリセット」の全体は3操作だけです。
 
-```
-NotifyGPIOResetPin:
-    GPIOSetting(0x00)      // IOCTL_GPIO_WRITE_PINS, 1 byte
-    GPIOSetting(0xFF)      // 2つの間に遅延なし
-HardwareReset:
-    Sleep(20 ms)
+```mermaid
+sequenceDiagram
+    participant DRV as WBFSPIDriver
+    participant PIN as reset GPIO
+
+    Note over DRV,PIN: NotifyGPIOResetPin
+    DRV->>PIN: GPIOSetting(0x00)
+    Note right of DRV: IOCTL_GPIO_WRITE_PINS, 1 byte
+    DRV->>PIN: GPIOSetting(0xFF)
+    Note right of DRV: 2 つの間に遅延なし
+    Note over DRV: HardwareReset
+    DRV->>DRV: Sleep(20 ms)
 ```
 
 その後 `FpDeviceInitialize` がレジスタ `0x08`（height）と `0x09`（width）を読み、`0x50` を期待します。全部 `0xFF` だと `HardwareReset` から約5回リトライし、`"Cannot find appropriate Sensor size"` をログして諦めます。**電源レールのステップも、2つ目の GPIO も、最初のリードより前の SPI ライトも存在しません。**
