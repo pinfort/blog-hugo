@@ -42,10 +42,7 @@ params:
     sidebar:
         emoji: 
         subtitle: pinfortのメモ書き置き場
-        avatar:
-            enabled: true
-            local: true
-            src: img/avatar.jpg
+        avatar: img/avatar.jpg
 
     article:
         math: false
