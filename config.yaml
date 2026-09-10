@@ -1,5 +1,5 @@
 baseurl: https://blog.pinfort.me
-languageCode: ja-jp
+locale: ja-jp
 timeZone: Asia/Tokyo
 theme: hugo-theme-stack
 pagination:
