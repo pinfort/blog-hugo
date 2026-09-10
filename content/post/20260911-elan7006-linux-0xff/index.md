@@ -180,3 +180,12 @@ FX2 クローンと sigrok/PulseView で £10〜15 程度。障害は計測器�
 [libfprint の MR !383](https://gitlab.freedesktop.org/libfprint/libfprint/-/merge_requests/383) はまさにこのセンサーとタッチパッド PID を対象にしていましたが、マージされず close されました（draft が enroll も verify も一度もできなかった）。libfprint master はこのパーツをサポートしていません。gitlab.freedesktop.org は自動フェッチをブロックする（Anubis）ので、その MR はブラウザで読んでください。
 
 このセンサーはベンダ INF に一級の install セクションを持つ、出荷済みのドキュメント化された構成です（`%DeviceName% = Biometric_Install_7006, ACPI\ELAN7006 ; For B9450`）。未知のハードウェアではありません。ただオープンソースドライバが存在せず、そしてこのボードでは、それを書く相手となる到達可能な電源ハンドルが存在しないだけです。
+
+## Related Link
+
+[libfprint issue #712](https://gitlab.freedesktop.org/libfprint/libfprint/-/work_items/712) 
+
+
+
+
+
