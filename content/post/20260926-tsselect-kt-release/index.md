@@ -7,8 +7,8 @@ slug: tsselect-kt-release
 TsselectのKotlin移植版をリリースしました。
 
 ## 概要
-ソースコード：[GitHub](https://github.com/pinfort/tsselect-kt)
-Mavenレポジトリ：[Maven Central](https://central.sonatype.com/artifact/me.pinfort/tsselect)
+- ソースコード：[GitHub](https://github.com/pinfort/tsselect-kt)
+- Mavenレポジトリ：[Maven Central](https://central.sonatype.com/artifact/me.pinfort/tsselect)
 
 ## 使い方
 Tsselect-Ktは、CLIとしてもライブラリとしても利用できます。
